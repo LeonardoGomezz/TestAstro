@@ -1,4 +1,5 @@
 ---
+layout: ../../layout/MarkdownPostLayout.astro
 title: Mi tercera publicación en el blog
 author: Leonardo Gomez
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."

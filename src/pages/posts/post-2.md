@@ -1,4 +1,5 @@
 ---
+layout: ../../layout/MarkdownPostLayout.astro
 title: Mi segunda publicación en el blog
 author: Leonardo Gomez
 description: "Después de aprender un poco de Astro, ¡no podía parar!"

@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro';
+import BaseLayout from '../layout/BaseLayout.astro';
 import '../styles/global.css'
 const pageTitle = "Sobre mi";
 
@@ -22,12 +23,6 @@ const fontWeight = "700"
 const textCase = "uppercase"
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
     <style define:vars={{skillColor, fontWeight, textCase}}>
       h1 {
         color: purple;
@@ -39,16 +34,13 @@ const textCase = "uppercase"
         text-transform: var(--textCase);
       }
     </style>
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-    <Header/>
-		<h1>{pageTitle}</h1>
-    <p>He aquí algunos datos sobre mí:</p>
-<ul>
-  <li>Me llamo {identity.firstName}.</li>
-  <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-  {identity.hobbies.length >= 2 &&
+    <BaseLayout>
+      <h1>{pageTitle}</h1>
+      <p>He aquí algunos datos sobre mí:</p>
+      <ul>
+        <li>Me llamo {identity.firstName}.</li>
+        <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
     <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
   }
 </ul>
@@ -62,7 +54,5 @@ const textCase = "uppercase"
 {finished && <p>¡He terminado este tutorial!</p>}
 
 {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
-<Footer/>
 
- 	</body>
-</html>
+</BaseLayout>
